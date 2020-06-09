@@ -24,7 +24,7 @@ node{
    sh "docker login -u kishorsg -p ${dockerHubPwd}"
 }
   
-   sh 'docke push kishorsg/my-app:1.0.0
+   sh 'docker push kishorsg/my-app:1.0.0
    }
 
 }
