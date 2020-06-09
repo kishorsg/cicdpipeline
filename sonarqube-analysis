@@ -27,9 +27,10 @@ node{
    sh 'docker push kishorsg/my-app:1.0.0'
    }
    
-   stage ('Deploy Pod to Kubernetes Cluster')
+   stage ('Deploy Pod to Kubernetes Cluster'){
+   
 
         kubernetesDeploy configs: "deployment.yml", kubeconfigId: 'minikubecluster'
 
-
+   }
 }
