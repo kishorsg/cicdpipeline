@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: minikubeapp-pod
+  labels:
+    app: minikubeapp
+spec:
+  containers:
+    - name: minikubeapp-ctr
+      image: kishorsg/my-app:1.0.0
+      ports:
+        - name: web
+          containerPort: 80
+          protocol: TCP
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: minikubeapp-svc
+  labels:
+    app: minikubeapp
+spec:
+  type: NodePort
+  ports:
+    - port: 8075
+      targetPort: 80
+  selector:
+    app: minikubeapp
