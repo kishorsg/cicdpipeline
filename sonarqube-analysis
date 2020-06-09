@@ -20,7 +20,10 @@ node{
    }
    
    stage('Push Docker image'){
-   sh 'docker login -u kishorsg -p '
+   withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
+   sh "docker login -u kishorsg -p ${dockerHubPwd}"
+}
+  
    sh 'docke push kishorsg/my-app:1.0.0
    }
 
