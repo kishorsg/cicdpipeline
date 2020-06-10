@@ -16,7 +16,7 @@ node{
  //  }
     
    stage ('Build Docker Image') {
-    sh 'docker build -t kishorsg/my-app:1.0.0 .'
+    sh 'docker build -t kishorsg/my-app:2.0.0 .'
   }
    
    stage('Push Docker image'){
@@ -24,7 +24,7 @@ node{
    sh "docker login -u kishorsg -p ${dockerHubPwd}"
 }
   
-   sh 'docker push kishorsg/my-app:1.0.0'
+   sh 'docker push kishorsg/my-app:2.0.0'
    }
    
    //stage ('Deploy Pod to Kubernetes Cluster'){
