@@ -29,6 +29,7 @@ spec:
   type: NodePort
   ports:
     - port: 8075
+      targetPort: 8080   
       
   selector:
     app: minikubeapp
