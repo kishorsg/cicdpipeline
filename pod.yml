@@ -24,7 +24,7 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 8075
+    - port: 8080
       targetPort: 80
   selector:
     app: minikubeapp
