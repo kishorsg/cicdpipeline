@@ -38,9 +38,9 @@ node{
   // }
   
   stage ('Deploy Pod to Kubernetes Cluster'){
-          steps {
+          
     	 kubernetesDeploy(configs: 'pod.yml',kubeconfigId: 'minikubecluster',enableConfigSubstitution: true)
-             }   		
+               		
             		
    }
   
