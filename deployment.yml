@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: minikubeapp-ctr
-        image: kishorsg/my-app:1.0.0
+        image: kishorsg/my-app:2.0.0
         ports:
         - containerPort: 8080
 
