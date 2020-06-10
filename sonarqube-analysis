@@ -32,14 +32,14 @@ node{
     
                 		//kubernetesDeploy(
                     		//	kubeconfigId: 'minikubecluster',
-                    			//configs: 'pod.yml'
+                    			//configs: 'deployment.yml'
                 		//)
             		
   // }
   
   stage ('Deploy Pod to Kubernetes Cluster'){
           
-    	 kubernetesDeploy(configs: 'pod.yml',kubeconfigId: 'kubernetesid',enableConfigSubstitution: true)
+    	 kubernetesDeploy(configs: 'deployment.yml',kubeconfigId: 'kubernetesid',enableConfigSubstitution: true)
                		
             		
    }
