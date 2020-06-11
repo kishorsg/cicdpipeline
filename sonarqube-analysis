@@ -37,11 +37,16 @@ node{
             		
   // }
   
-  stage ('Deploy Pod to Kubernetes Cluster'){
+  //stage ('Deploy Pod to Kubernetes Cluster'){
           
-    	 kubernetesDeploy(configs: 'dep.yml',kubeconfigId: 'kubernetes',enableConfigSubstitution: true)
+    //	 kubernetesDeploy(configs: 'dep.yml',kubeconfigId: 'kubernetes',enableConfigSubstitution: true)
                		
             		
-   }
+   //}
+   
+   withKubeConfig(credentialsId: 'kubernetescli') {
+    sh 'kubectl apply -f deployment.yml'
+}
+   
   
 }
