@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-pod
+spec:
+  selector:
+    matchLabels:
+      app: devopsapp
+  template:
+    metadata:
+      labels:
+        app: devopsapp
+    spec:
+      containers:
+      - name: devopsapp-ctr
+        image: yashasvinerali/my-app:1
+        command: ["/bin/sh"]
+        args: ["-c","sh /usr/local/tomcat/bin/startup.sh;while true; do echo hello; sleep 10;done"]
+        ports:
+            - name: http
+              containerPort: 8080
+  replicas: 1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: devops-app-service
+  labels:
+    app: devopsapp
+spec:
+  type: NodePort
+  ports:
+  - port: 8082
+    nodePort: 31884
+    protocol: TCP
+    name: http
+  selector:
+    app: devopsapp
