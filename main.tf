@@ -44,3 +44,22 @@ resource "kubernetes_deployment" "example" {
     }
   }
 }
+
+
+resource "kubernetes_service" "example" {
+  metadata {
+    name = "deployment-terraform"
+  }
+  spec {
+    selector = {
+      app = "${kubernetes_pod.example.metadata.0.labels.app}"
+    }
+    session_affinity = "ClientIP"
+    port {
+      port        = 8085
+      target_port = 8080
+    }
+
+    type = "LoadBalancer"
+  }
+}
