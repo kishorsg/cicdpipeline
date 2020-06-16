@@ -51,5 +51,5 @@ node{
    withKubeConfig(credentialsId: 'kubecli') {
     sh 'kubectl apply -f deployment.yml'
 }
-   
+  
  }
