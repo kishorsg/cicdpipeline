@@ -41,7 +41,7 @@ node{
             		
   // }
   
-  //stage ('Deploy Pod to Kubernetes Cluster'){
+  stage ('Deploy Pod to Kubernetes Cluster'){
           
     //	 kubernetesDeploy(configs: 'dep.yml',kubeconfigId: 'kubernetes',enableConfigSubstitution: true)
                		
@@ -53,3 +53,4 @@ node{
 }
   
  }
+}
