@@ -19,7 +19,7 @@ node{
     //sh "[$class : 'Publisher', reportFilenamePattern : '**/testng-result.xml']"
  // }
    
-   stage ('Build Docker Image') {
+   /*stage ('Build Docker Image') {
     sh 'docker build -t kishorsg/my-app:2.0.0 .'
   }
    
@@ -52,5 +52,5 @@ node{
     sh 'kubectl apply -f deployment.yml'
 }
   
- }
+ }*/
 }
