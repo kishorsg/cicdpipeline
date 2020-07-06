@@ -39,7 +39,7 @@ node{
                     			//configs: 'deployment.yml'
                 		//)
             		
-  // } */
+  // } 
   
   stage ('Deploy Pod to Kubernetes Cluster'){
           
@@ -52,5 +52,12 @@ node{
     sh 'kubectl apply -f deployment.yml'
 }
   
- }
+ }*/
+   
+   stage ('Deploy Pod to Kubernetes Cluster'){
+   withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'katacodanew', namespace: '', serverUrl: '') {
+    sh 'kubectl apply -f deployment.yml'
+}   
+   
+}
 }
