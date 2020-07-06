@@ -8,7 +8,7 @@ node{
       sh "${mvnHome}/bin/mvn clean package"
    }
    
-   stage('SonarQube Analysis') {
+  /* stage('SonarQube Analysis') {
        def mvnHome =  tool name: 'maven', type: 'maven'
         withSonarQubeEnv('sonar') { 
         sh "${mvnHome}/bin/mvn sonar:sonar"
@@ -39,7 +39,7 @@ node{
                     			//configs: 'deployment.yml'
                 		//)
             		
-  // }
+  // } */
   
   stage ('Deploy Pod to Kubernetes Cluster'){
           
@@ -48,9 +48,9 @@ node{
             		
    //}
    
-   withKubeConfig(credentialsId: 'kubecli') {
+   withKubeConfig(credentialsId: 'katacoda') {
     sh 'kubectl apply -f deployment.yml'
 }
   
- }*/
+ }
 }
