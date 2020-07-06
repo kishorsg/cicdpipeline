@@ -47,7 +47,7 @@ node{
     //}
    
    //withKubeConfig(credentialsId: 'katacoda') 
-     kubernetesDeploy configs: '', kubeConfig: [path: ''], kubeconfigId: 'katacoda'
+     kubernetesDeploy (configs: '', kubeConfig: [path: ''], kubeconfigId: 'katacoda')
      {
     sh 'kubectl apply -f deployment.yml'
 }
