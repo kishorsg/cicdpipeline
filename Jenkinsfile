@@ -14,12 +14,12 @@ node{
         sh "${mvnHome}/bin/mvn sonar:sonar"
        }
   }
-   //stage ('TestNG result'){
+   stage ('TestNG result'){
     
-    //sh "[$class : 'Publisher', reportFilenamePattern : '**,/testng-result.xml']"
- // }
+    
+  }
    
-   /*stage ('Build Docker Image') {
+   stage ('Build Docker Image') {
     sh 'docker build -t kishorsg/my-app:2.0.0 .'
   }
    
@@ -55,7 +55,6 @@ node{
  }*/
    
    stage ('Deploy Pod to Kubernetes Cluster'){
-   //withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'katacodanew', namespace: '', serverUrl: 'https://172.17.0.22:6443/') {
       withKubeConfig(caCertificate: '', clusterName: '', contextName: 'kubernetes-admin@kubernetes', credentialsId: 'katacodanew', namespace: '', serverUrl: '') {
       
     sh 'kubectl apply -f deployment.yml'
