@@ -44,9 +44,7 @@ node{
   stage ('Deploy Pod to Kubernetes Cluster'){
           
     //	 kubernetesDeploy(configs: 'dep.yml',kubeconfigId: 'kubernetes',enableConfigSubstitution: true)
-               		
-            		
-   //}
+    //}
    
    //withKubeConfig(credentialsId: 'katacoda') 
      kubernetesDeploy configs: '', kubeConfig: [path: ''], kubeconfigId: 'katacoda', secretName: '', ssh: [sshCredentialsId: '*', sshServer: ''], textCredentials: [certificateAuthorityData: '', clientCertificateData: '', clientKeyData: '', serverUrl: 'https://']
