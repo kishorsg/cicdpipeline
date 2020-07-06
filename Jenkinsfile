@@ -16,7 +16,7 @@ node{
   }
    //stage ('TestNG result'){
     
-    //sh "[$class : 'Publisher', reportFilenamePattern : '**/testng-result.xml']"
+    //sh "[$class : 'Publisher', reportFilenamePattern : '**,/testng-result.xml']"
  // }
    
    /*stage ('Build Docker Image') {
