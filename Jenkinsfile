@@ -55,7 +55,7 @@ node{
  }*/
    
    stage ('Deploy Pod to Kubernetes Cluster'){
-   withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'katacodanew', namespace: '', serverUrl: '') {
+   withKubeConfig(caCertificate: '', clusterName: '', contextName: '', credentialsId: 'katacodanew', namespace: '', serverUrl: 'https://172.17.0.22:6443/') {
     sh 'kubectl apply -f deployment.yml'
 }   
    
